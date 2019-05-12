@@ -1,0 +1,76 @@
+<header class="navbar navbar-expand navbar-dark px-4 flex-column flex-md-row">
+
+  <a class="navbar-brand mr-md-2 mr-0" routerLink="/" aria-label="NG Bootstrap" (click)="navbarCollapsed = true">
+    <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36"
+      height="36" viewBox="0 0 512 512">
+      <defs>
+        <linearGradient id="a">
+          <stop offset="0" stop-color="#0143a3" />
+          <stop offset="1" stop-color="#0273d4" />
+        </linearGradient>
+        <linearGradient xlink:href="#a" id="b" gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.33396 0 0 1.33396 404.049 -265.9)" x1="-111" y1="967.862" x2="-110.5"
+          y2="617.362" />
+      </defs>
+      <path d="M255.71 558.533l207.07 81.226-20.02 272.853-185.907 113.26-187.05-114.404L50.356 640.33z" fill="url(#b)"
+        fill-rule="evenodd" transform="translate(0 -540.362)" stroke="#fff" stroke-width="20" />
+      <path d="M255.142 18.01l1.716 467.404 185.675-113.635 19.725-272.724z" fill-rule="evenodd" fill-opacity=".098" />
+
+      <g>
+        <title>Layer 1</title>
+        <g id="g10"
+          transform="matrix(24.803967173683358,0,0,-22.304671683594133,-1751.1085066735104,16173.815894335828) ">
+          <g id="g12">
+            <g id="g14" clip-path="url(#clipPath18)">
+              <text font-weight="normal" font-size="10.56px" font-family="'Courier 10 Pitch'" fill="#FFFFFF"
+                fill-rule="nonzero" transform="matrix(1,0,0,-1,75.024,710.98) " id="text22">
+                <tspan x="1" y="0" id="tspan20">M</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="g24">
+            <g id="g26" clip-path="url(#clipPath30)" />
+          </g>
+        </g>
+      </g>
+
+    </svg>
+    <span class="ml-2 d-xl-none d-lg-none d-md-none d-inline">ng-bootstrap</span>
+  </a>
+
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/home']" (click)="navbarCollapsed = true">Home</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/tools']" (click)="navbarCollapsed = true">Tools</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/components']" (click)="navbarCollapsed = true">Components</a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="social-buttons navbar-nav flex-row ml-md-auto d-none d-lg-flex align-items-center">
+    <a class="github-button" href="https://github.com/ng-bootstrap/ng-bootstrap" rel="noopener" target="_blank"
+      data-size="large" data-show-count="true" data-count-aria-label="# stargazers on GitHub"
+      aria-label="Star ng-bootstrap/ng-bootstrap on GitHub">Star</a>
+    <a href="https://twitter.com/intent/tweet?button_hashtag=ngbootstrap" rel="noopener" class="twitter-hashtag-button"
+      data-size="large" data-text="I&#39;m checking out ng-bootstrap, THE Angular UI framework for Bootstrap CSS"
+      data-url="https://ng-bootstrap.github.io" data-show-count="true">Tweet #ngbootstrap</a>
+  </ul>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+    [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</header>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>
