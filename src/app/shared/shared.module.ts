@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
+import { MatMenuModule, MatIconModule, MatGridListModule, MatButtonModule } from '@angular/material';
+
+
 import { ThemePickerComponent } from './theme-picker/theme-picker.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [NavbarComponent, ThemePickerComponent],
+  declarations: [ThemePickerComponent, NavBarComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    MatMenuModule,
+  ],
+  exports: [
+    ThemePickerComponent,
+    MatButtonModule,
+    NavBarComponent,
   ]
 })
 export class SharedModule { }
