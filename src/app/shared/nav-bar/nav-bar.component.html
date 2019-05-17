@@ -5,6 +5,9 @@
          alt="MagicWorldZ">
       <span>MagicWorldZ</span>
     </a>
+    <a mat-button class="docs-navbar-hide-small docs-button"
+     *ngFor="let key of itemKeys"
+     [routerLink]="key">{{navBarItems[key].name}}</a>
   <div class="flex-spacer"></div>
   <app-theme-picker></app-theme-picker>
 </nav>

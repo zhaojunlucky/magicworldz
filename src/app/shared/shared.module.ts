@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {RouterModule} from '@angular/router';
 import { MatMenuModule, MatIconModule, MatGridListModule, MatButtonModule } from '@angular/material';
 
 
@@ -14,6 +15,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
+    RouterModule,
   ],
   exports: [
     ThemePickerComponent,
