@@ -1,5 +1,6 @@
 @import '../node_modules/@angular/material/theming';
 @import './app/shared/nav-bar/navbar-theme';
+@import './app/shared/sidenav/sidenav-theme';
 
 @mixin material-custom-theme($theme) {
     $primary: map-get($theme, primary);
@@ -9,4 +10,5 @@
     $foreground: map-get($theme, foreground);
 
     @include nav-bar-theme($theme);
+    @include sidenav-theme($theme);
 }
