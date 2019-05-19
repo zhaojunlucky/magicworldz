@@ -38,6 +38,11 @@ export class SidenavService {
             id: 'json-formatter',
             name: 'JSON Formatter',
             summary: ''
+          },
+          {
+            id: 'sha',
+            name: 'Secure Hash Algorithm',
+            summary: ''
           }
         ]
       }
