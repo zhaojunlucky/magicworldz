@@ -25,10 +25,14 @@ export class ShaComponent implements OnInit {
   }
 
   doSha(newVal): void {
-    this.sha1Str = SHA1.default(newVal);
-    this.sha256Str = SHA256.default(newVal);
-    this.sha512Str = SHA512.default(newVal);
-    this.sha3Str = SHA3.default(newVal);
-    this.md5Str = MD5.default(newVal);
+    if (newVal != '') {
+      this.sha1Str = SHA1.default(newVal);
+      this.sha256Str = SHA256.default(newVal);
+      this.sha512Str = SHA512.default(newVal);
+      this.sha3Str = SHA3.default(newVal);
+      this.md5Str = MD5.default(newVal);
+    } else {
+      this.sha1Str = this.sha256Str = this.sha512Str = this.sha3Str = this.md5Str = '';
+    }
   }
 }
