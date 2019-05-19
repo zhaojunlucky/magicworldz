@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 
-export interface DocItem {
+export interface SideNavItem {
   id: string;
   name: string;
   summary?: string;
-  packageName?: string;
-  examples?: string[];
 }
 
-export interface DocCategory {
+export interface SideNavCategory {
   id: string;
   name: string;
-  items: DocItem[];
+  items: SideNavItem[];
   summary?: string;
 }
 
@@ -19,7 +17,7 @@ export interface DocCategory {
   providedIn: 'root'
 })
 export class SidenavService {
-  DOCS: {[key: string]: DocCategory[]} = {
+  DOCS: {[key: string]: SideNavCategory[]} = {
     'tools': [
       {
         id: 'en-de-code',
@@ -30,27 +28,21 @@ export class SidenavService {
             id: 'base64',
             name: 'Base64 Encode & Decode',
             summary: 'Suggests relevant options as the user types.',
-            examples: [
-              'autocomplete-overview',
-              'autocomplete-simple',
-              'autocomplete-display',
-              'autocomplete-filter',
-              'autocomplete-optgroup',
-              'autocomplete-auto-active-first-option',
-            ]
           },
           {
             id: 'url-en-de',
             name: 'URL Encode & Decode',
             summary: 'Suggests relevant options as the user types.',
-            examples: [
-              'autocomplete-overview',
-              'autocomplete-simple',
-              'autocomplete-display',
-              'autocomplete-filter',
-              'autocomplete-optgroup',
-              'autocomplete-auto-active-first-option',
-            ]
+          },
+          {
+            id: 'json-formatter',
+            name: 'JSON Formatter',
+            summary: ''
+          },
+          {
+            id: 'sha',
+            name: 'Secure Hash Algorithm',
+            summary: ''
           }
         ]
       }
@@ -58,7 +50,7 @@ export class SidenavService {
   }
   constructor() { }
 
-  getCategories(section: string): DocCategory[] {
-    return this.DOCS['tools'];
+  getCategories(section: string): SideNavCategory[] {
+    return this.DOCS[section];
   }
 }
