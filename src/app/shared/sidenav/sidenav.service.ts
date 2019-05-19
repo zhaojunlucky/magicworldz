@@ -33,6 +33,11 @@ export class SidenavService {
             id: 'url-en-de',
             name: 'URL Encode & Decode',
             summary: 'Suggests relevant options as the user types.',
+          },
+          {
+            id: 'json-formatter',
+            name: 'JSON Formatter',
+            summary: ''
           }
         ]
       }
