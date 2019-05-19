@@ -26,7 +26,7 @@ export class SidenavComponent implements OnInit {
   isScreenSmall: Observable<boolean>;
   @Input() categoryName: string;
 
-  constructor(private sidenavService: SidenavService,
+  constructor(sidenavService: SidenavService,
     private _route: ActivatedRoute,
     zone: NgZone,
     breakpoints: BreakpointObserver) {
@@ -62,7 +62,7 @@ export class NavComponent implements OnInit, OnDestroy {
   expansions = {};
   private _onDestroy = new Subject<void>();
 
-  constructor(private sidenavService: SidenavService,
+  constructor(public sidenavService: SidenavService,
     private parentComp: SidenavComponent,
               private _router: Router) {
     this.catName = parentComp.categoryName;

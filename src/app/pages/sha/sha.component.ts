@@ -12,12 +12,12 @@ import * as SHA3 from 'crypto-js/sha3'
   styleUrls: ['./sha.component.scss']
 })
 export class ShaComponent implements OnInit {
-  private srcText: string = '';
-  private sha3Str: string = '';
-  private sha1Str: string = '';
-  private sha256Str: string = '';
-  private sha512Str: string = '';
-  private md5Str: string = '';
+  srcText: string = '';
+  sha3Str: string = '';
+  sha1Str: string = '';
+  sha256Str: string = '';
+  sha512Str: string = '';
+  md5Str: string = '';
 
   constructor() { }
 

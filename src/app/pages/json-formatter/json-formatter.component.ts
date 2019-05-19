@@ -12,8 +12,7 @@ export class JsonFormatterComponent implements OnInit {
   @ViewChild('inputJSON') srcInput: ElementRef;
   @ViewChild('resultDiv') resultDiv: ElementRef;
 
-  private jsonString: string = '';
-  private formattedJSONHtml: string = '';
+  jsonString: string = '';
 
   constructor() { }
 
