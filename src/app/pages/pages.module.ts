@@ -14,6 +14,7 @@ import { Base64Component } from './base64/base64.component';
 import { UrlEnDeComponent } from './url-en-de/url-en-de.component';
 
 export const TOOLS_ROUTES = [
+  { path: '', pathMatch: 'full', redirectTo: 'base64'},
   { path: 'base64', component: Base64Component },
   { path: 'url-en-de', component: UrlEnDeComponent },
 ];
