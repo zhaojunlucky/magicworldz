@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, NgModule, Output } from '@angular/core';
 
+import { ComponentPageTitle } from '../page-title/page-title'
+
 
 @Component({
   selector: 'app-page-header',
@@ -9,12 +11,12 @@ import { Component, OnInit, EventEmitter, NgModule, Output } from '@angular/core
 export class PageHeaderComponent implements OnInit {
   @Output() toggleSidenav = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(public _componentPageTitle: ComponentPageTitle) { }
 
   ngOnInit() {
   }
 
   getTitle() {
-    return 'Title';
+    return this._componentPageTitle.title;
   }
 }

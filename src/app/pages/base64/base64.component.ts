@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
+
 @Component({
   selector: 'app-base64',
   templateUrl: './base64.component.html',

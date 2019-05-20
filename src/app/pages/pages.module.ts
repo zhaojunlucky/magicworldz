@@ -14,6 +14,8 @@ import { Base64Component } from './base64/base64.component';
 import { UrlEnDeComponent } from './url-en-de/url-en-de.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { ShaComponent } from './sha/sha.component';
+import { ComponentPageTitle } from '../shared/page-title/page-title'
+
 
 export const TOOLS_ROUTES = [
   { path: '', pathMatch: 'full', redirectTo: 'base64'},
@@ -39,6 +41,9 @@ export const TOOLS_ROUTES = [
     ToolsComponent,
     Base64Component,
     UrlEnDeComponent,
+  ],
+  providers: [
+    ComponentPageTitle,
   ]
 })
 export class PagesModule { }
