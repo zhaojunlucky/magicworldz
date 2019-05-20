@@ -22,6 +22,18 @@ body {
     }
   }
 
+  .app-component-viewer {
+    font-weight: 400;
+
+    // spacing for the component viewer
+    padding: 20px 50px 50px 20px;
+
+    @media ($mat-xsmall) {
+      padding-left: $content-padding-side-xs;
+      padding-right: $content-padding-side-xs;
+    }
+  }
+
   // These styles are for controlling SVGs without using the /deep/ selector
 
   .docs-component-category-list-card-image svg {

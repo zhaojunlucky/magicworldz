@@ -9,9 +9,12 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SidenavComponent, NavComponent } from './sidenav/sidenav.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+
+import {NavigationFocusModule} from './navigation-focus/navigation-focus';
 
 @NgModule({
-  declarations: [ThemePickerComponent, NavBarComponent, SidenavComponent, NavComponent],
+  declarations: [ThemePickerComponent, NavBarComponent, SidenavComponent, NavComponent, PageHeaderComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -22,6 +25,7 @@ import { SidenavComponent, NavComponent } from './sidenav/sidenav.component';
     MatSidenavModule,
     BrowserAnimationsModule,
     CdkAccordionModule,
+    NavigationFocusModule,
   ],
   exports: [
     ThemePickerComponent,
@@ -30,6 +34,7 @@ import { SidenavComponent, NavComponent } from './sidenav/sidenav.component';
     NavComponent,
     SidenavComponent,
     NavComponent,
+    PageHeaderComponent,
   ]
 })
 export class SharedModule { }
