@@ -1,13 +1,15 @@
 <nav class="docs-navbar-header">
-    <a mat-button class="docs-button" routerLink="/" aria-label="MagicWorldZ">
-      <img class="docs-angular-logo"
-         src="assets/images/home/logo.svg"
-         alt="MagicWorldZ">
-      <span>MagicWorldZ</span>
-    </a>
-    <a mat-button class="docs-navbar-hide-small docs-button"
-     *ngFor="let key of itemKeys"
-     [routerLink]="key">{{navBarItems[key].name}}</a>
+  <a mat-button class="docs-button" routerLink="/" aria-label="MagicWorldZ">
+    <img class="docs-angular-logo" src="assets/images/home/logo.svg" alt="MagicWorldZ">
+    <span>MagicWorldZ</span>
+  </a>
+  <a mat-button class="docs-navbar-hide-small docs-button" *ngFor="let key of itemKeys"
+    [routerLink]="key">{{navBarItems[key].name}}</a>
   <div class="flex-spacer"></div>
   <app-theme-picker></app-theme-picker>
+</nav>
+
+<nav class="docs-navbar docs-navbar-show-small">
+  <a mat-button class="docs-navbar-show-small docs-button" *ngFor="let key of itemKeys"
+    [routerLink]="key">{{navBarItems[key].name}}</a>
 </nav>
