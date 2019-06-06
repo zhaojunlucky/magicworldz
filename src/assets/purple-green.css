@@ -1372,6 +1372,11 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .docs-app-background {
   background: #303030; }
 
+.docs-primary-header {
+  background: #9c27b0; }
+  .docs-primary-header h1 {
+    color: white; }
+
 app-nav-bar {
   color: white; }
   app-nav-bar .docs-navbar,

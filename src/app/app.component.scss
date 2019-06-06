@@ -1,3 +1,5 @@
+@import '../styles/constants';
+
 app-root {
   display: flex;
   flex-direction: column;
@@ -16,8 +18,36 @@ app-nav-bar {
   z-index: 2;
 }
 
+app-root > app-tools {
+  flex: 1;
+}
+
 .title {
   font-size: 3rem;
   text-align: center;
   padding: 20px 0px;
+}
+
+@media (max-width: 720px) {
+  app-root {
+    top: 92px;
+  }
+
+  material-docs-app > app-homepage,
+  material-docs-app > app-guides,
+  material-docs-app > guide-viewer {
+    overflow-y: visible;
+  }
+}
+
+app-component-viewer {
+  font-weight: 400;
+
+  // spacing for the component viewer
+  padding: 20px 50px 50px 20px;
+
+  @media ($mat-xsmall) {
+    padding-left: $content-padding-side-xs;
+    padding-right: $content-padding-side-xs;
+  }
 }

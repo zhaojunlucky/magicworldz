@@ -1,12 +1,14 @@
-<h2>Base64 Encode & Decode</h2>
-
-<mat-form-field class="input-text">
-  <textarea #srcInput matInput placeholder="Input text to decode or encode" rows="10" [(ngModel)]="srcText"></textarea>
-</mat-form-field>
-<div>
-  <button mat-raised-button color="primary" (click)="decode()">Decode</button>
-  <button mat-raised-button color="accent" class="btn-right" (click)="encode()">Encode</button>
+<div class="app-component-viewer">
+  <mat-form-field class="input-text">
+    <textarea #srcInput matInput placeholder="Input text to decode or encode" rows="10"
+      [(ngModel)]="srcText"></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" (click)="decode()">Decode</button>
+    <button mat-raised-button color="accent" class="btn-right" (click)="encode()">Encode</button>
+  </div>
+  <mat-form-field class="input-text bottom-field">
+    <textarea matInput placeholder="Decoded or encoded text" rows="10" readonly="readonly"
+      [(ngModel)]="resultText"></textarea>
+  </mat-form-field>
 </div>
-<mat-form-field class="input-text bottom-field">
-  <textarea matInput placeholder="Decoded or encoded text" rows="10" readonly="readonly" [(ngModel)]="resultText"></textarea>
-</mat-form-field>
