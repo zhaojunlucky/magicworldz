@@ -45,6 +45,23 @@ export class SidenavService {
             summary: ''
           }
         ]
+      },
+      {
+        id: 'string-csv-markdown',
+        name: 'String & CSV & Markdown',
+        summary: 'String & CSV & Markdown utilities',
+        items: [
+          {
+            id: 'string-case',
+            name: 'String Case',
+            summary: '',
+          },
+          {
+            id: 'csv-to-md',
+            name: 'CSV to Markdown Table',
+            summary: '',
+          }
+        ]
       }
     ]
   }

@@ -1,0 +1,19 @@
+<div class="app-component-viewer">
+  <mat-form-field class="input-text">
+    <textarea matInput placeholder="Input string (will be trimed)" rows="4" [(ngModel)]="srcText"
+      (ngModelChange)="doTransform($event)"></textarea>
+  </mat-form-field>
+  <mat-form-field class="input-text">
+    <input matInput placeholder="Split Text" type="text" [(ngModel)]="splitText" (ngModelChange)="doCap($event)">
+  </mat-form-field>
+  <h3>String Transform Result</h3>
+  <mat-form-field class="output">
+    <input matInput placeholder="Lower Case" [(ngModel)]="lowerCaseStr" readonly="readonly">
+  </mat-form-field>
+  <mat-form-field class="output">
+    <input matInput placeholder="Upper Case" [(ngModel)]="upperCaseStr" readonly="readonly">
+  </mat-form-field>
+  <mat-form-field class="output">
+    <input matInput placeholder="Capitalize" [(ngModel)]="capitalizeStr" readonly="readonly">
+  </mat-form-field>
+</div>
