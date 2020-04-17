@@ -26,11 +26,13 @@ export class PageTitleService {
                     let id = segments[2];
                     let cats = this.sidenavService.getCategories(section);
                     if (cats != undefined && cats != null) {
-                        let items = cats[0].items;
-                        for (let index in items) {
-                            let cat = items[index];
-                            if (cat.id == id) {
-                                this._componentPageTitle.title = cat.name;
+                        for (let cat in cats) {
+                            let items = cats[cat].items;
+                            for (let index in items) {
+                                let cat = items[index];
+                                if (cat.id == id) {
+                                    this._componentPageTitle.title = cat.name;
+                                }
                             }
                         }
                     }

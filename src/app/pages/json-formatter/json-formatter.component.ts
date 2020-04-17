@@ -9,8 +9,8 @@ import * as JSONFormatter from 'json-formatter-js'
   styleUrls: ['./json-formatter.component.scss']
 })
 export class JsonFormatterComponent implements OnInit {
-  @ViewChild('inputJSON') srcInput: ElementRef;
-  @ViewChild('resultDiv') resultDiv: ElementRef;
+  @ViewChild('inputJSON', { static: true }) srcInput: ElementRef;
+  @ViewChild('resultDiv', { static: true }) resultDiv: ElementRef;
 
   jsonString: string = '';
 

@@ -5,6 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 import { SharedModule } from '../shared/shared.module'
@@ -14,7 +19,11 @@ import { Base64Component } from './base64/base64.component';
 import { UrlEnDeComponent } from './url-en-de/url-en-de.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { ShaComponent } from './sha/sha.component';
-import { ComponentPageTitle } from '../shared/page-title/page-title'
+import { ComponentPageTitle } from '../shared/page-title/page-title';
+import { HomeComponent } from './home/home.component';
+import { StringCaseComponent } from './string-case/string-case.component';
+import { CsvMarkdownComponent } from './csv-markdown/csv-markdown.component';
+import { DndDirective } from './csv-markdown/dnd.directive'
 
 
 export const TOOLS_ROUTES = [
@@ -23,11 +32,13 @@ export const TOOLS_ROUTES = [
   { path: 'url-en-de', component: UrlEnDeComponent },
   { path: 'json-formatter', component: JsonFormatterComponent},
   { path: 'sha', component: ShaComponent},
+  { path: 'string-case', component: StringCaseComponent},
+  { path: 'csv-to-md', component: CsvMarkdownComponent},
 ];
 
 
 @NgModule({
-  declarations: [AboutComponent, ToolsComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, ],
+  declarations: [AboutComponent, ToolsComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, HomeComponent, StringCaseComponent, CsvMarkdownComponent, DndDirective, ],
   imports: [
     CommonModule,
     SharedModule,
@@ -35,6 +46,11 @@ export const TOOLS_ROUTES = [
     MatButtonModule,
     FormsModule,
     MatDialogModule,
+    MatGridListModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    ClipboardModule,
+    MatTooltipModule,
   ],
   exports: [
     AboutComponent,

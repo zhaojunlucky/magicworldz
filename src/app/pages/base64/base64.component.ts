@@ -7,7 +7,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./base64.component.scss']
 })
 export class Base64Component implements OnInit {
-  @ViewChild('srcInput') srcInput: ElementRef;
+  @ViewChild('srcInput', { static: true }) srcInput: ElementRef;
   @Input() srcText: string = '';
   resultText: string;
   constructor() { }
