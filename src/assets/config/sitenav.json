@@ -43,6 +43,18 @@
                     "summary": ""
                 }
             ]
+        },
+        {
+            "id": "date-time",
+            "name": "Date & Time",
+            "summary": "Date & Time utilities",
+            "items": [
+                {
+                    "id": "date-in-a-few-days",
+                    "name": "Calculate the Date in a Few Days",
+                    "summary": ""
+                }
+            ]
         }
     ]
 }

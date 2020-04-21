@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
 
 
 import { SharedModule } from '../shared/shared.module'
@@ -23,7 +27,8 @@ import { ComponentPageTitle } from '../shared/page-title/page-title';
 import { HomeComponent } from './home/home.component';
 import { StringCaseComponent } from './string-case/string-case.component';
 import { CsvMarkdownComponent } from './csv-markdown/csv-markdown.component';
-import { DndDirective } from './csv-markdown/dnd.directive'
+import { DndDirective } from './csv-markdown/dnd.directive';
+import { DateInAFewDaysComponent } from './date-in-a-few-days/date-in-a-few-days.component'
 
 
 export const TOOLS_ROUTES = [
@@ -34,11 +39,12 @@ export const TOOLS_ROUTES = [
   { path: 'sha', component: ShaComponent},
   { path: 'string-case', component: StringCaseComponent},
   { path: 'csv-to-md', component: CsvMarkdownComponent},
+  { path: 'date-in-a-few-days', component: DateInAFewDaysComponent},
 ];
 
 
 @NgModule({
-  declarations: [AboutComponent, ToolsComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, HomeComponent, StringCaseComponent, CsvMarkdownComponent, DndDirective, ],
+  declarations: [AboutComponent, ToolsComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, HomeComponent, StringCaseComponent, CsvMarkdownComponent, DndDirective, DateInAFewDaysComponent, ],
   imports: [
     CommonModule,
     SharedModule,
@@ -51,6 +57,11 @@ export const TOOLS_ROUTES = [
     MatIconModule,
     ClipboardModule,
     MatTooltipModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatTableModule,
   ],
   exports: [
     AboutComponent,
