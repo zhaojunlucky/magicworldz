@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 export interface SideNavItem {
   id: string;
@@ -17,56 +19,22 @@ export interface SideNavCategory {
   providedIn: 'root'
 })
 export class SidenavService {
-  DOCS: {[key: string]: SideNavCategory[]} = {
-    'tools': [
-      {
-        id: 'en-de-code',
-        name: 'Encode & Decode Utilities',
-        summary: 'Base64, URL Encode Decode utilities',
-        items: [
-          {
-            id: 'base64',
-            name: 'Base64 Encode & Decode',
-            summary: 'Suggests relevant options as the user types.',
-          },
-          {
-            id: 'url-en-de',
-            name: 'URL Encode & Decode',
-            summary: 'Suggests relevant options as the user types.',
-          },
-          {
-            id: 'json-formatter',
-            name: 'JSON Formatter',
-            summary: ''
-          },
-          {
-            id: 'sha',
-            name: 'Secure Hash Algorithm',
-            summary: ''
-          }
-        ]
-      },
-      {
-        id: 'string-csv-markdown',
-        name: 'String & CSV & Markdown',
-        summary: 'String & CSV & Markdown utilities',
-        items: [
-          {
-            id: 'string-case',
-            name: 'String Case',
-            summary: '',
-          },
-          {
-            id: 'csv-to-md',
-            name: 'CSV to Markdown Table',
-            summary: '',
-          }
-        ]
-      }
-    ]
-  }
-  constructor() { }
+  DOCS: object = {}
+  constructor(private http: HttpClient) {
 
+  }
+
+  load(): Promise<any> {
+    return new Promise((resolve, reject) => {
+          this.http
+          .get('assets/config/sitenav.json')
+          .subscribe(response => {
+              this.DOCS = response;
+              resolve(true);
+          })
+        });
+  }
+ 
   getCategories(section: string): SideNavCategory[] {
     return this.DOCS[section];
   }

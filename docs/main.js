@@ -48,7 +48,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-component-viewer\">\n  <div class=\"container\" appDnd (fileDropped)=\"onFileDropped($event)\">\n    <input type=\"file\" #fileDropRef id=\"fileDropRef\" multiple (change)=\"fileBrowseHandler($event.target.files)\" />\n    <img src=\"assets/svg/upload-file.svg\">\n\n    <h3>Drag and drop file here</h3>\n    <h3>or</h3>\n    <label for=\"fileDropRef\">Browse for file</label>\n</div>\n<div class=\"files-list\">\n    <div class=\"single-file\" *ngFor=\"let file of files; let i = index\">\n        <div class=\"file-icon\" style=\"width: 50px\">\n            <img src=\"assets/svg/uploaded-file.svg\">\n        </div>\n        <div class=\"info\">\n            <h4 class=\"name\">\n                {{ file?.name }}\n            </h4>\n            <p class=\"size\">\n                {{ formatBytes(file?.size) }}\n            </p>\n        </div>\n        <div class=\"delete\" (click)=\"deleteFile(i)\">\n            <img src=\"assets/svg/delete-file.svg\">\n        </div>\n    </div>\n  </div>\n  <mat-form-field class=\"input-text\">\n    <textarea matInput class=\"md-text\" placeholder=\"Input or paste CSV String\" rows=\"8\" [(ngModel)]=\"csvTxt\"></textarea>\n  </mat-form-field>\n  <h3>CSV Options</h3>\n  <mat-grid-list cols=\"5\" rowHeight=\"70px\" gutterSize=\"5px\" class=\"input-csv-option\">\n    <mat-grid-tile><mat-form-field>\n      <input matInput placeholder=\"Separator\" [(ngModel)]=\"separator\">\n    </mat-form-field></mat-grid-tile>\n    <mat-grid-tile><mat-form-field>\n      <input matInput placeholder=\"Quote\" [(ngModel)]=\"quote\"> \n    </mat-form-field></mat-grid-tile>\n    <mat-grid-tile><mat-form-field>\n      <input matInput placeholder=\"New Line\" [(ngModel)]=\"newLine\"> \n    </mat-form-field></mat-grid-tile>\n    <mat-grid-tile><mat-form-field>\n      <input matInput placeholder=\"Escape\" [(ngModel)]=\"escape\"> \n    </mat-form-field></mat-grid-tile>\n    <mat-grid-tile>\n      <mat-slide-toggle [(ngModel)]=\"hasHeaders\">Headers</mat-slide-toggle>\n    </mat-grid-tile>\n  </mat-grid-list>\n  <div><button mat-raised-button color=\"accent\" (click)=\"generateMdTable()\">Generate Markdown Table</button></div>\n  <div class=\"output\">\n    <mat-form-field class=\"input-text\">\n      <textarea wrap=\"off\" class=\"md-text\" matInput placeholder=\"Markdown Table\" [(ngModel)]=\"markdownTableStr\" rows=\"8\"></textarea>\n    </mat-form-field>\n    <!-- <pre #mdTable>{{markdownTableStr}}</pre> -->\n    <button mat-icon-button [cdkCopyToClipboard]=\"markdownTableStr\"><mat-icon matTooltip=\"Copy the Markdown table\" >file_copy</mat-icon></button>\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-component-viewer\">\r\n  <div class=\"container\" appDnd (fileDropped)=\"onFileDropped($event)\">\r\n    <input type=\"file\" #fileDropRef id=\"fileDropRef\" multiple (change)=\"fileBrowseHandler($event.target.files)\" />\r\n    <img src=\"assets/svg/upload-file.svg\">\r\n\r\n    <h3>Drag and drop file here</h3>\r\n    <h3>or</h3>\r\n    <label for=\"fileDropRef\">Browse for file</label>\r\n</div>\r\n<div class=\"files-list\">\r\n    <div class=\"single-file\" *ngFor=\"let file of files; let i = index\">\r\n        <div class=\"file-icon\" style=\"width: 50px\">\r\n            <img src=\"assets/svg/uploaded-file.svg\">\r\n        </div>\r\n        <div class=\"info\">\r\n            <h4 class=\"name\">\r\n                {{ file?.name }}\r\n            </h4>\r\n            <p class=\"size\">\r\n                {{ formatBytes(file?.size) }}\r\n            </p>\r\n        </div>\r\n        <div class=\"delete\" (click)=\"deleteFile(i)\">\r\n            <img src=\"assets/svg/delete-file.svg\">\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <mat-form-field class=\"input-text\">\r\n    <textarea matInput class=\"md-text\" placeholder=\"Input or paste CSV String\" rows=\"8\" [(ngModel)]=\"csvTxt\"></textarea>\r\n  </mat-form-field>\r\n  <h3>CSV Options</h3>\r\n  <mat-grid-list cols=\"5\" rowHeight=\"70px\" gutterSize=\"5px\" class=\"input-csv-option\">\r\n    <mat-grid-tile><mat-form-field>\r\n      <input matInput placeholder=\"Separator\" [(ngModel)]=\"separator\">\r\n    </mat-form-field></mat-grid-tile>\r\n    <mat-grid-tile><mat-form-field>\r\n      <input matInput placeholder=\"Quote\" [(ngModel)]=\"quote\"> \r\n    </mat-form-field></mat-grid-tile>\r\n    <mat-grid-tile><mat-form-field>\r\n      <input matInput placeholder=\"New Line\" [(ngModel)]=\"newLine\"> \r\n    </mat-form-field></mat-grid-tile>\r\n    <mat-grid-tile><mat-form-field>\r\n      <input matInput placeholder=\"Escape\" [(ngModel)]=\"escape\"> \r\n    </mat-form-field></mat-grid-tile>\r\n    <mat-grid-tile>\r\n      <mat-slide-toggle [(ngModel)]=\"hasHeaders\">Headers</mat-slide-toggle>\r\n    </mat-grid-tile>\r\n  </mat-grid-list>\r\n  <div><button mat-raised-button color=\"accent\" (click)=\"generateMdTable()\">Generate Markdown Table</button></div>\r\n  <div class=\"output\">\r\n    <mat-form-field class=\"input-text\">\r\n      <textarea wrap=\"off\" class=\"md-text\" matInput placeholder=\"Markdown Table\" [(ngModel)]=\"markdownTableStr\" rows=\"8\"></textarea>\r\n    </mat-form-field>\r\n    <!-- <pre #mdTable>{{markdownTableStr}}</pre> -->\r\n    <button mat-icon-button [cdkCopyToClipboard]=\"markdownTableStr\"><mat-icon matTooltip=\"Copy the Markdown table\" >file_copy</mat-icon></button>\r\n  </div>\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.html":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.html ***!
+  \******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-component-viewer\">\n    <mat-form-field>\n        <mat-label>Select a start date</mat-label>\n        <input matInput type=\"date\" [formControl]=\"startDateControl\"/>\n        <mat-error *ngIf=\"startDateControl.hasError('required')\">\n            Start date is <strong>required</strong>\n        </mat-error>\n    </mat-form-field>\n    <mat-form-field>\n        <mat-label>Days after</mat-label>\n        <mat-select [formControl]=\"daysControl\" multiple>\n            <mat-option *ngFor=\"let day of daysList\" [value]=\"day\">{{day.name}}</mat-option>\n        </mat-select>\n        <mat-error *ngIf=\"daysControl.hasError('required')\">\n            Days after is <strong>required</strong>\n        </mat-error>\n    </mat-form-field>\n    <div>\n        <button mat-raised-button color=\"accent\" (click)=\"calc()\">Start</button>\n    </div>\n    <div class=\"result\" *ngIf=\"startDate\">\n        <mat-card>\n            <mat-card-title>Dates Calculation on {{startDate}}</mat-card-title>\n            <mat-card-content>\n                <table mat-table [dataSource]=\"results\" class=\"mat-elevation-z8\">\n\n                    <ng-container matColumnDef=\"days\">\n                      <th mat-header-cell *matHeaderCellDef> Days after </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.days}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"date\">\n                        <th mat-header-cell *matHeaderCellDef> Date </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.dateStr}}/{{element.date.getDate()}} </td>\n                      </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                </table>                  \n            </mat-card-content>\n        </mat-card>\n\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -61,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"docs-primary-header\">\n    <h1>Home</h1>\n</div>\n<div class=\"docs-app-background\">\n    <h2>Some tools used in daily work!</h2>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"docs-primary-header\">\r\n    <h1>Home</h1>\r\n</div>\r\n<div class=\"docs-app-background\">\r\n    <h2>Some tools used in daily work!</h2>\r\n</div>");
 
 /***/ }),
 
@@ -100,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-component-viewer\">\n  <mat-form-field class=\"input-text\">\n    <textarea matInput placeholder=\"Input string (will be trimed)\" rows=\"4\" [(ngModel)]=\"srcText\"\n      (ngModelChange)=\"doTransform($event)\"></textarea>\n  </mat-form-field>\n  <mat-form-field class=\"input-text\">\n    <input matInput placeholder=\"Split Text\" type=\"text\" [(ngModel)]=\"splitText\" (ngModelChange)=\"doCap($event)\">\n  </mat-form-field>\n  <h3>String Transform Result</h3>\n  <mat-form-field class=\"output\">\n    <input matInput placeholder=\"Lower Case\" [(ngModel)]=\"lowerCaseStr\" readonly=\"readonly\">\n  </mat-form-field>\n  <mat-form-field class=\"output\">\n    <input matInput placeholder=\"Upper Case\" [(ngModel)]=\"upperCaseStr\" readonly=\"readonly\">\n  </mat-form-field>\n  <mat-form-field class=\"output\">\n    <input matInput placeholder=\"Capitalize\" [(ngModel)]=\"capitalizeStr\" readonly=\"readonly\">\n  </mat-form-field>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"app-component-viewer\">\r\n  <mat-form-field class=\"input-text\">\r\n    <textarea matInput placeholder=\"Input string (will be trimed)\" rows=\"4\" [(ngModel)]=\"srcText\"\r\n      (ngModelChange)=\"doTransform($event)\"></textarea>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"input-text\">\r\n    <input matInput placeholder=\"Split Text\" type=\"text\" [(ngModel)]=\"splitText\" (ngModelChange)=\"doCap($event)\">\r\n  </mat-form-field>\r\n  <h3>String Transform Result</h3>\r\n  <mat-form-field class=\"output\">\r\n    <input matInput placeholder=\"Lower Case\" [(ngModel)]=\"lowerCaseStr\" readonly=\"readonly\">\r\n  </mat-form-field>\r\n  <mat-form-field class=\"output\">\r\n    <input matInput placeholder=\"Upper Case\" [(ngModel)]=\"upperCaseStr\" readonly=\"readonly\">\r\n  </mat-form-field>\r\n  <mat-form-field class=\"output\">\r\n    <input matInput placeholder=\"Capitalize\" [(ngModel)]=\"capitalizeStr\" readonly=\"readonly\">\r\n  </mat-form-field>\r\n</div>");
 
 /***/ }),
 
@@ -139,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"containter\">\n    <h1 mat-dialog-title> {{data.title}}</h1>\n    <div mat-dialog-content>\n      <p>{{data.message}}</p>\n    </div>\n    <div mat-dialog-actions>\n        <button class=\"button\" mat-button (click)=\"close()\" cdkFocusInitial>Ok</button>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"containter\">\r\n    <h1 mat-dialog-title> {{data.title}}</h1>\r\n    <div mat-dialog-content>\r\n      <p>{{data.message}}</p>\r\n    </div>\r\n    <div mat-dialog-actions>\r\n        <button class=\"button\" mat-button (click)=\"close()\" cdkFocusInitial>Ok</button>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -589,20 +602,23 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: siteNavServiceFactory, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "siteNavServiceFactory", function() { return siteNavServiceFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/animations.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _pages_pages_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/pages.module */ "./src/app/pages/pages.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _pages_pages_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/pages.module */ "./src/app/pages/pages.module.ts");
+/* harmony import */ var _shared_sidenav_sidenav_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/sidenav/sidenav.service */ "./src/app/shared/sidenav/sidenav.service.ts");
 
 
 
@@ -611,23 +627,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+function siteNavServiceFactory(sidenavService) {
+    return function () { return sidenavService.load(); };
+}
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _pages_pages_module__WEBPACK_IMPORTED_MODULE_7__["PagesModule"],
+                _pages_pages_module__WEBPACK_IMPORTED_MODULE_8__["PagesModule"],
             ],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            providers: [
+                _shared_sidenav_sidenav_service__WEBPACK_IMPORTED_MODULE_9__["SidenavService"],
+                { provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["APP_INITIALIZER"], useFactory: siteNavServiceFactory, deps: [_shared_sidenav_sidenav_service__WEBPACK_IMPORTED_MODULE_9__["SidenavService"]], multi: true },
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -1063,6 +1088,98 @@ var DndDirective = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.scss":
+/*!****************************************************************************!*\
+  !*** ./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.scss ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".result {\n  margin-top: 1em;\n}\n\ntable {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZGF0ZS1pbi1hLWZldy1kYXlzL0M6XFxVc2Vyc1xcemhhb2oyNlxcRG9jdW1lbnRzXFxAd29ya1xcQGdpdGh1YlxcbWFnaWN3b3JsZHovc3JjXFxhcHBcXHBhZ2VzXFxkYXRlLWluLWEtZmV3LWRheXNcXGRhdGUtaW4tYS1mZXctZGF5cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcGFnZXMvZGF0ZS1pbi1hLWZldy1kYXlzL2RhdGUtaW4tYS1mZXctZGF5cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2RhdGUtaW4tYS1mZXctZGF5cy9kYXRlLWluLWEtZmV3LWRheXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucmVzdWx0IHtcclxuICAgIG1hcmdpbi10b3A6IDEuMGVtO1xyXG59XHJcblxyXG50YWJsZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSIsIi5yZXN1bHQge1xuICBtYXJnaW4tdG9wOiAxZW07XG59XG5cbnRhYmxlIHtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: DateInAFewDaysComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateInAFewDaysComponent", function() { return DateInAFewDaysComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+
+
+
+var DateInAFewDaysComponent = /** @class */ (function () {
+    function DateInAFewDaysComponent() {
+        this.daysControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]);
+        this.startDateControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]);
+        this.displayedColumns = ['days', 'date'];
+        this.results = [];
+        this.startDate = "";
+        this.daysList = [
+            { "value": 14, name: "14" },
+            { "value": 28, name: "28" },
+            { "value": 56, name: "56" },
+            { "value": 84, name: "84" },
+            { "value": 180, name: "180" }
+        ];
+    }
+    DateInAFewDaysComponent.prototype.ngOnInit = function () {
+        this.daysControl.setValue(this.daysList);
+    };
+    DateInAFewDaysComponent.prototype.calc = function () {
+        this.startDateControl.markAsTouched();
+        this.daysControl.markAsTouched();
+        if (!this.startDateControl.invalid && !this.daysControl.invalid) {
+            var date = this.startDateControl.value;
+            this.startDate = this.formatDate(new Date(date));
+            this.results = this.calcDate(this.startDateControl.value, this.daysControl.value);
+        }
+    };
+    DateInAFewDaysComponent.prototype.calcDateAfter = function (startDate, daysAfter) {
+        var date = new Date(startDate);
+        date.setDate(date.getDate() + daysAfter);
+        return date;
+    };
+    DateInAFewDaysComponent.prototype.calcDate = function (startDate, days) {
+        var result = [];
+        for (var i in days) {
+            var day = days[i];
+            var date = this.calcDateAfter(startDate, day.value);
+            result.push({
+                "days": day.value,
+                "date": date,
+                "dateStr": this.formatDate(date),
+            });
+        }
+        return result;
+    };
+    DateInAFewDaysComponent.prototype.formatDate = function (date) {
+        return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+    };
+    DateInAFewDaysComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-date-in-a-few-days',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./date-in-a-few-days.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.html")).default,
+            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./date-in-a-few-days.component.scss */ "./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.scss")).default]
+        }),
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+    ], DateInAFewDaysComponent);
+    return DateInAFewDaysComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/home/home.component.scss":
 /*!************************************************!*\
   !*** ./src/app/pages/home/home.component.scss ***!
@@ -1213,18 +1330,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/icon.js");
 /* harmony import */ var _angular_cdk_clipboard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/clipboard */ "./node_modules/@angular/cdk/__ivy_ngcc__/fesm5/clipboard.js");
 /* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/tooltip */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/tooltip.js");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./about/about.component */ "./src/app/pages/about/about.component.ts");
-/* harmony import */ var _tools_tools_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./tools/tools.component */ "./src/app/pages/tools/tools.component.ts");
-/* harmony import */ var _base64_base64_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./base64/base64.component */ "./src/app/pages/base64/base64.component.ts");
-/* harmony import */ var _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./url-en-de/url-en-de.component */ "./src/app/pages/url-en-de/url-en-de.component.ts");
-/* harmony import */ var _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./json-formatter/json-formatter.component */ "./src/app/pages/json-formatter/json-formatter.component.ts");
-/* harmony import */ var _sha_sha_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sha/sha.component */ "./src/app/pages/sha/sha.component.ts");
-/* harmony import */ var _shared_page_title_page_title__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../shared/page-title/page-title */ "./src/app/shared/page-title/page-title.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./home/home.component */ "./src/app/pages/home/home.component.ts");
-/* harmony import */ var _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./string-case/string-case.component */ "./src/app/pages/string-case/string-case.component.ts");
-/* harmony import */ var _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./csv-markdown/csv-markdown.component */ "./src/app/pages/csv-markdown/csv-markdown.component.ts");
-/* harmony import */ var _csv_markdown_dnd_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./csv-markdown/dnd.directive */ "./src/app/pages/csv-markdown/dnd.directive.ts");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/select.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/card.js");
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/divider.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./about/about.component */ "./src/app/pages/about/about.component.ts");
+/* harmony import */ var _tools_tools_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./tools/tools.component */ "./src/app/pages/tools/tools.component.ts");
+/* harmony import */ var _base64_base64_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./base64/base64.component */ "./src/app/pages/base64/base64.component.ts");
+/* harmony import */ var _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./url-en-de/url-en-de.component */ "./src/app/pages/url-en-de/url-en-de.component.ts");
+/* harmony import */ var _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./json-formatter/json-formatter.component */ "./src/app/pages/json-formatter/json-formatter.component.ts");
+/* harmony import */ var _sha_sha_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sha/sha.component */ "./src/app/pages/sha/sha.component.ts");
+/* harmony import */ var _shared_page_title_page_title__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../shared/page-title/page-title */ "./src/app/shared/page-title/page-title.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./home/home.component */ "./src/app/pages/home/home.component.ts");
+/* harmony import */ var _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./string-case/string-case.component */ "./src/app/pages/string-case/string-case.component.ts");
+/* harmony import */ var _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./csv-markdown/csv-markdown.component */ "./src/app/pages/csv-markdown/csv-markdown.component.ts");
+/* harmony import */ var _csv_markdown_dnd_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./csv-markdown/dnd.directive */ "./src/app/pages/csv-markdown/dnd.directive.ts");
+/* harmony import */ var _date_in_a_few_days_date_in_a_few_days_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./date-in-a-few-days/date-in-a-few-days.component */ "./src/app/pages/date-in-a-few-days/date-in-a-few-days.component.ts");
+
+
+
+
+
 
 
 
@@ -1251,22 +1378,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var TOOLS_ROUTES = [
     { path: '', pathMatch: 'full', redirectTo: 'base64' },
-    { path: 'base64', component: _base64_base64_component__WEBPACK_IMPORTED_MODULE_15__["Base64Component"] },
-    { path: 'url-en-de', component: _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_16__["UrlEnDeComponent"] },
-    { path: 'json-formatter', component: _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_17__["JsonFormatterComponent"] },
-    { path: 'sha', component: _sha_sha_component__WEBPACK_IMPORTED_MODULE_18__["ShaComponent"] },
-    { path: 'string-case', component: _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_21__["StringCaseComponent"] },
-    { path: 'csv-to-md', component: _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_22__["CsvMarkdownComponent"] },
+    { path: 'base64', component: _base64_base64_component__WEBPACK_IMPORTED_MODULE_19__["Base64Component"] },
+    { path: 'url-en-de', component: _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_20__["UrlEnDeComponent"] },
+    { path: 'json-formatter', component: _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_21__["JsonFormatterComponent"] },
+    { path: 'sha', component: _sha_sha_component__WEBPACK_IMPORTED_MODULE_22__["ShaComponent"] },
+    { path: 'string-case', component: _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_25__["StringCaseComponent"] },
+    { path: 'csv-to-md', component: _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_26__["CsvMarkdownComponent"] },
+    { path: 'date-in-a-few-days', component: _date_in_a_few_days_date_in_a_few_days_component__WEBPACK_IMPORTED_MODULE_28__["DateInAFewDaysComponent"] },
 ];
 var PagesModule = /** @class */ (function () {
     function PagesModule() {
     }
     PagesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"], _tools_tools_component__WEBPACK_IMPORTED_MODULE_14__["ToolsComponent"], _base64_base64_component__WEBPACK_IMPORTED_MODULE_15__["Base64Component"], _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_16__["UrlEnDeComponent"], _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_17__["JsonFormatterComponent"], _sha_sha_component__WEBPACK_IMPORTED_MODULE_18__["ShaComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_20__["HomeComponent"], _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_21__["StringCaseComponent"], _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_22__["CsvMarkdownComponent"], _csv_markdown_dnd_directive__WEBPACK_IMPORTED_MODULE_23__["DndDirective"],],
+            declarations: [_about_about_component__WEBPACK_IMPORTED_MODULE_17__["AboutComponent"], _tools_tools_component__WEBPACK_IMPORTED_MODULE_18__["ToolsComponent"], _base64_base64_component__WEBPACK_IMPORTED_MODULE_19__["Base64Component"], _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_20__["UrlEnDeComponent"], _json_formatter_json_formatter_component__WEBPACK_IMPORTED_MODULE_21__["JsonFormatterComponent"], _sha_sha_component__WEBPACK_IMPORTED_MODULE_22__["ShaComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_24__["HomeComponent"], _string_case_string_case_component__WEBPACK_IMPORTED_MODULE_25__["StringCaseComponent"], _csv_markdown_csv_markdown_component__WEBPACK_IMPORTED_MODULE_26__["CsvMarkdownComponent"], _csv_markdown_dnd_directive__WEBPACK_IMPORTED_MODULE_27__["DndDirective"], _date_in_a_few_days_date_in_a_few_days_component__WEBPACK_IMPORTED_MODULE_28__["DateInAFewDaysComponent"],],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_12__["SharedModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_16__["SharedModule"],
                 _angular_material_input__WEBPACK_IMPORTED_MODULE_4__["MatInputModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
@@ -1276,15 +1404,20 @@ var PagesModule = /** @class */ (function () {
                 _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
                 _angular_cdk_clipboard__WEBPACK_IMPORTED_MODULE_10__["ClipboardModule"],
                 _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_11__["MatTooltipModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_13__["MatCardModule"],
+                _angular_material_divider__WEBPACK_IMPORTED_MODULE_14__["MatDividerModule"],
+                _angular_material_table__WEBPACK_IMPORTED_MODULE_15__["MatTableModule"],
             ],
             exports: [
-                _about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"],
-                _tools_tools_component__WEBPACK_IMPORTED_MODULE_14__["ToolsComponent"],
-                _base64_base64_component__WEBPACK_IMPORTED_MODULE_15__["Base64Component"],
-                _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_16__["UrlEnDeComponent"],
+                _about_about_component__WEBPACK_IMPORTED_MODULE_17__["AboutComponent"],
+                _tools_tools_component__WEBPACK_IMPORTED_MODULE_18__["ToolsComponent"],
+                _base64_base64_component__WEBPACK_IMPORTED_MODULE_19__["Base64Component"],
+                _url_en_de_url_en_de_component__WEBPACK_IMPORTED_MODULE_20__["UrlEnDeComponent"],
             ],
             providers: [
-                _shared_page_title_page_title__WEBPACK_IMPORTED_MODULE_19__["ComponentPageTitle"],
+                _shared_page_title_page_title__WEBPACK_IMPORTED_MODULE_23__["ComponentPageTitle"],
             ]
         })
     ], PagesModule);
@@ -2262,67 +2395,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidenavService", function() { return SidenavService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+
 
 
 var SidenavService = /** @class */ (function () {
-    function SidenavService() {
-        this.DOCS = {
-            'tools': [
-                {
-                    id: 'en-de-code',
-                    name: 'Encode & Decode Utilities',
-                    summary: 'Base64, URL Encode Decode utilities',
-                    items: [
-                        {
-                            id: 'base64',
-                            name: 'Base64 Encode & Decode',
-                            summary: 'Suggests relevant options as the user types.',
-                        },
-                        {
-                            id: 'url-en-de',
-                            name: 'URL Encode & Decode',
-                            summary: 'Suggests relevant options as the user types.',
-                        },
-                        {
-                            id: 'json-formatter',
-                            name: 'JSON Formatter',
-                            summary: ''
-                        },
-                        {
-                            id: 'sha',
-                            name: 'Secure Hash Algorithm',
-                            summary: ''
-                        }
-                    ]
-                },
-                {
-                    id: 'string-csv-markdown',
-                    name: 'String & CSV & Markdown',
-                    summary: 'String & CSV & Markdown utilities',
-                    items: [
-                        {
-                            id: 'string-case',
-                            name: 'String Case',
-                            summary: '',
-                        },
-                        {
-                            id: 'csv-to-md',
-                            name: 'CSV to Markdown Table',
-                            summary: '',
-                        }
-                    ]
-                }
-            ]
-        };
+    function SidenavService(http) {
+        this.http = http;
+        this.DOCS = {};
     }
+    SidenavService.prototype.load = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http
+                .get('assets/config/sitenav.json')
+                .subscribe(function (response) {
+                _this.DOCS = response;
+                resolve(true);
+            });
+        });
+    };
     SidenavService.prototype.getCategories = function (section) {
         return this.DOCS[section];
     };
+    SidenavService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
     SidenavService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+        Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], SidenavService);
     return SidenavService;
 }());
