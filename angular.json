@@ -24,7 +24,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/404.html"
             ],
             "styles": [
               "src/styles.scss",
@@ -110,7 +111,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/404.html"
             ]
           }
         },
@@ -163,5 +165,8 @@
       "styleext": "css"
     }
   },
-  "defaultProject": "ng-custom-theme"
+  "defaultProject": "ng-custom-theme",
+  "cli": {
+    "analytics": "91d26e2a-0900-4827-8dfd-90859955268c"
+  }
 }
