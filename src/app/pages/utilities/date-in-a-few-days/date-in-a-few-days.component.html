@@ -1,0 +1,42 @@
+<mat-form-field>
+    <mat-label>Select a start date</mat-label>
+    <input matInput type="date" [formControl]="startDateControl" />
+    <mat-error *ngIf="startDateControl.hasError('required')">
+        Start date is <strong>required</strong>
+    </mat-error>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Days after</mat-label>
+    <mat-select [formControl]="daysControl" multiple>
+        <mat-option *ngFor="let day of daysList" [value]="day">{{day.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="daysControl.hasError('required')">
+        Days after is <strong>required</strong>
+    </mat-error>
+</mat-form-field>
+<div>
+    <button mat-raised-button color="accent" (click)="calc()">Start</button>
+</div>
+<div class="result" *ngIf="startDate">
+    <mat-card>
+        <mat-card-title>Dates Calculation on {{startDate}}</mat-card-title>
+        <mat-card-content>
+            <table mat-table [dataSource]="results" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="days">
+                    <th mat-header-cell *matHeaderCellDef> Days after </th>
+                    <td mat-cell *matCellDef="let element"> {{element.days}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.dateStr}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+
+</div>

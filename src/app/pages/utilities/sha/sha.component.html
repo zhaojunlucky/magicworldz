@@ -1,0 +1,20 @@
+<mat-form-field class="input-text">
+    <textarea matInput placeholder="Input string" rows="8" [(ngModel)]="srcText"
+        (ngModelChange)="doSha($event)"></textarea>
+</mat-form-field>
+<h3>Hash Result</h3>
+<mat-form-field class="output-sha">
+    <input matInput placeholder="SHA 1" [(ngModel)]="sha1Str" readonly="readonly">
+</mat-form-field>
+<mat-form-field class="output-sha">
+    <input matInput placeholder="SHA 256" [(ngModel)]="sha256Str" readonly="readonly">
+</mat-form-field>
+<mat-form-field class="output-sha">
+    <input matInput placeholder="SHA 512" [(ngModel)]="sha512Str" readonly="readonly">
+</mat-form-field>
+<mat-form-field class="output-sha">
+    <input matInput placeholder="SHA 3" [(ngModel)]="sha3Str" readonly="readonly">
+</mat-form-field>
+<mat-form-field class="output-sha">
+    <input matInput placeholder="MD5" [(ngModel)]="md5Str" readonly="readonly">
+</mat-form-field>
