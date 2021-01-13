@@ -57,5 +57,7 @@
   <a mat-button class="docs-navbar-link"
     *ngFor="let key of sectionKeys"
     [routerLink]="key">{{sections[key].name}}</a>
-  <a mat-button class="docs-navbar-link" routerLink="guides">Guides</a>
+  <ng-template [ngIf]="!production">
+    <a mat-button class="docs-navbar-link" routerLink="guides">Guides</a>
+  </ng-template>
 </nav>
