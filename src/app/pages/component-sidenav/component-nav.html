@@ -1,0 +1,30 @@
+<div class="docs-component-viewer-nav">
+  <div class="docs-component-viewer-nav-content" *ngIf="(params | async)?.section as section">
+    <nav *ngFor="let component of docItems.getItems(section);">
+      <div *ngIf="component.items; else defaultNavList">
+        <button cdkAccordionItem #panel="cdkAccordionItem" (click)="panel.toggle()" expanded="true"
+            class="docs-nav-content-btn" [attr.aria-label]="component.name + ', section toggle'"
+            [attr.aria-controls]="'panel-' + component.id" [attr.aria-expanded]="panel.expanded">
+            {{component.name}}
+            <mat-icon>{{panel.expanded ? 'keyboard_arrow_up' :  'keyboard_arrow_down'}}</mat-icon>
+        </button>
+        <mat-nav-list [@bodyExpansion]="panel.expanded ? 'expanded' : 'collapsed'" id="panel-{{component.id}}">
+            <a mat-list-item *ngFor="let item of component.items" [routerLink]="'/' + section + '/' + component.id + '/' + item.id"
+                routerLinkActive="docs-component-viewer-sidenav-item-selected">
+                {{item.name}}
+            </a>
+        </mat-nav-list>
+      </div>
+      <ng-template #defaultNavList>
+        <mat-nav-list>
+          <a mat-list-item *ngFor="let component of docItems.getItems(section)"
+             [routerLink]="'/' + section+ '/' + component.id"
+             routerLinkActive="docs-component-viewer-sidenav-item-selected"
+             [attr.aria-current]="currentItemId === component.id ? 'page': 'false'">
+            {{component.name}}
+          </a>
+        </mat-nav-list>
+      </ng-template>
+    </nav>
+  </div>
+</div>

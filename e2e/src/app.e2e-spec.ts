@@ -1,16 +1,16 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {MaterialDocsAppPage} from './app.po';
+import {browser, logging} from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Material Docs App', () => {
+  let page: MaterialDocsAppPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new MaterialDocsAppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to magicworldz!');
+  it('should display welcome message', async () => {
+    await page.navigateTo();
+    expect(await page.getTitleText()).toEqual('Angular Material');
   });
 
   afterEach(async () => {

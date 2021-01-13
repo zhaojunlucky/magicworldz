@@ -1,9 +1,13 @@
+// @ts-check
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-const { SpecReporter } = require('jasmine-spec-reporter');
+const {SpecReporter} = require('jasmine-spec-reporter');
 
-exports.config = {
+/**
+ * @type { import("protractor").Config }
+ */
+let config = {
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
@@ -21,8 +25,22 @@ exports.config = {
   },
   onPrepare() {
     require('ts-node').register({
-      project: require('path').join(__dirname, './tsconfig.e2e.json')
+      project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new SpecReporter({spec: {displayStacktrace: true}}));
   }
 };
+
+if (process.env['TRAVIS']) {
+  config.sauceUser = process.env['SAUCE_USERNAME'];
+  config.sauceKey = process.env['SAUCE_ACCESS_KEY'].split('').reverse().join('');
+
+  config.capabilities = {
+    'browserName': 'chrome',
+    'tunnel-identifier': process.env['TRAVIS_JOB_NUMBER'],
+    'build': process.env['TRAVIS_JOB_NUMBER'],
+    'name': 'Material Docs E2E'
+  };
+}
+
+exports.config = config;
