@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import * as moment from 'moment';
 import { DurationInputArg2, Moment } from 'moment';
 
@@ -23,7 +22,7 @@ export class DateCalcComponent implements OnInit {
   });
 
   calDateForm = new FormGroup({
-    calDate: new FormControl(new Date()),
+    calcDate: new FormControl(new Date()),
   });
 
   direction: string = "1";
@@ -34,7 +33,7 @@ export class DateCalcComponent implements OnInit {
     {value: 'month', viewValue: 'Month'}
   ];
   selectedCalcType: string = this.calcTypes[0].value;
-  inputCalcNum: string = '';
+  inputCalcNum: string = '1';
   dateDiff: string = '';
   dateCalc: string = '';
 
