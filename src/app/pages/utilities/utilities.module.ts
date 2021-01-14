@@ -25,6 +25,11 @@ import { StringCaseComponent } from './string-case/string-case.component';
 import { CsvMarkdownComponent } from './csv-markdown/csv-markdown.component';
 import { InfoDialogModule } from 'src/app/shared/info-dialog/info-dialog.module';
 import { DateInAFewDaysComponent } from './date-in-a-few-days/date-in-a-few-days.component';
+import { DateCalcComponent } from './date-calc/date-calc.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 export function utilitiesRouteMatcher(url: UrlSegment[], group: UrlSegmentGroup, route: Route) {
   let segments = group.segments
@@ -75,14 +80,19 @@ export const UTILITIES_ROUTES: Routes = [
     component: CsvMarkdownComponent
   },
   {
-    matcher: (url, group) => commonChildMatch('date-in-a-few-days', 'date-time', url, group),
+    matcher: (url, group) => commonChildMatch('date-calc', 'date-time', url, group),
+    pathMatch: 'full',
+    component: DateCalcComponent
+  },
+  {
+    matcher: (url, group) => commonChildMatch('date-in-a-few-days', '', url, group),
     pathMatch: 'full',
     component: DateInAFewDaysComponent
   },
 ]
 
 @NgModule({
-  declarations: [UtilitiesViewerComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, StringCaseComponent, CsvMarkdownComponent, DateInAFewDaysComponent],
+  declarations: [UtilitiesViewerComponent, Base64Component, UrlEnDeComponent, JsonFormatterComponent, ShaComponent, StringCaseComponent, CsvMarkdownComponent, DateInAFewDaysComponent, DateCalcComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -103,6 +113,9 @@ export const UTILITIES_ROUTES: Routes = [
     MatDividerModule,
     MatTableModule,
     InfoDialogModule,
+    MatTabsModule,
+    MatDatepickerModule,
+    MatRadioModule,
   ]
 })
 export class UtilitiesModule { }

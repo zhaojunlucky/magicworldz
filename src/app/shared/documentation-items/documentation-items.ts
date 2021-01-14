@@ -587,11 +587,16 @@ const DOCS: { [key: string]: DocItem[] } = {
         prefix: 'badge-',
       },
       items: [
-          {
-              "id": "date-in-a-few-days",
-              "name": "Day in a Few Days",
-              "summary": "Suggests relevant options as the user types."
-          },
+        {
+          id: 'date-calc',
+          name: "Date Calculation",
+          summary: 'Date Calculation'
+        },
+        {
+            "id": "date-in-a-few-days",
+            "name": "Day in a Few Days",
+            "summary": "Suggests relevant options as the user types."
+        },
       ]
     },
   ]

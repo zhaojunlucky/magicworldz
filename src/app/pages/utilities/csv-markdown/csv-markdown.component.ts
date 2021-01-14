@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { InfoDialogComponent } from 'src/app/shared/info-dialog/info-dialog.component';
 import { Papa } from 'ngx-papaparse';
 
+const BREAKPOINT_WIDTH: number = 480;
+
 @Component({
   selector: 'csv-markdown',
   templateUrl: './csv-markdown.component.html',
@@ -17,10 +19,16 @@ export class CsvMarkdownComponent implements OnInit {
   newLine: any = "\\n";
   escape: string = "\"";
   hasHeaders: boolean = false;
+  breakpoint: number;
 
   constructor(private dialog: MatDialog, private papa: Papa) { }
 
   ngOnInit(): void {
+    this.breakpoint = (window.innerWidth <= BREAKPOINT_WIDTH) ? 1 : 5;
+  }
+
+  onResize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= BREAKPOINT_WIDTH) ? 1 : 5;
   }
 
   generateMdTable(): void {
