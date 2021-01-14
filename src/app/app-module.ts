@@ -9,6 +9,9 @@ import {MATERIAL_DOCS_ROUTES} from './routes';
 import {NavBarModule} from './shared/navbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -23,6 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     // add this to avoid "No provider for InjectionToken mat-select-scroll-strategy!"
     MatSelectModule,
     MatDialogModule,
+    MatNativeDateModule,
+    MatMomentDateModule,
+    MatDatepickerModule,
   ],
   declarations: [MaterialDocsApp],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],

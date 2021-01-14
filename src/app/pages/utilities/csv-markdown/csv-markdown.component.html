@@ -28,7 +28,7 @@
     <textarea matInput class="md-text" placeholder="Input or paste CSV String" rows="8" [(ngModel)]="csvTxt"></textarea>
 </mat-form-field>
 <h3>CSV Options</h3>
-<mat-grid-list cols="5" rowHeight="70px" gutterSize="5px" class="input-csv-option">
+<mat-grid-list cols="5" rowHeight="70px" gutterSize="5px" class="input-csv-option" [cols]="breakpoint" (window:resize)="onResize($event)">
     <mat-grid-tile>
         <mat-form-field>
             <input matInput placeholder="Separator" [(ngModel)]="separator">
@@ -53,7 +53,7 @@
         <mat-slide-toggle [(ngModel)]="hasHeaders">Headers</mat-slide-toggle>
     </mat-grid-tile>
 </mat-grid-list>
-<div><button mat-raised-button color="accent" (click)="generateMdTable()">Generate Markdown Table</button></div>
+<div><button mat-raised-button color="accent" (click)="generateMdTable()">Generate</button></div>
 <div class="output">
     <mat-form-field class="input-text">
         <textarea wrap="off" class="md-text" matInput placeholder="Markdown Table" [(ngModel)]="markdownTableStr"

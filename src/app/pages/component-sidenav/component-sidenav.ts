@@ -40,7 +40,6 @@ import {MatDrawerToggleResult} from '@angular/material/sidenav/drawer';
 import {MatListModule} from '@angular/material/list';
 import {NavigationFocusModule} from '../../shared/navigation-focus/navigation-focus';
 import {NavigationFocusService} from '../../shared/navigation-focus/navigation-focus.service';
-import { CanActivateComponentViewer } from '../component-viewer/component-viewer-can-load-guard';
 import { UtilitiesViewerComponent } from '../utilities/utilities-viewer/utilities-viewer.component';
 import { utilitiesRouteMatcher, UTILITIES_ROUTES } from '../utilities/utilities.module'
 
