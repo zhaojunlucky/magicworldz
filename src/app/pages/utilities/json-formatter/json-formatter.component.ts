@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as JSONFormatter from 'json-formatter-js'
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 @Component({
   selector: 'json-formatter',
@@ -7,14 +8,16 @@ import * as JSONFormatter from 'json-formatter-js'
   styleUrls: ['./json-formatter.component.scss']
 })
 export class JsonFormatterComponent implements OnInit {
+  STORAGE_KEY: string = 'JSON_FORMMAT';
   @ViewChild('inputJSON', { static: true }) srcInput: ElementRef;
   @ViewChild('resultDiv', { static: true }) resultDiv: ElementRef;
 
   jsonString: string = '';
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    this.jsonString = this.storageService.getOrDefault(this.STORAGE_KEY);
   }
 
   formmat(): void {
@@ -31,6 +34,11 @@ export class JsonFormatterComponent implements OnInit {
     } catch (e) {
       this.resultDiv.nativeElement.innerHTML = `<p>${e.message}</p>`;
     }
+    this.save();
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, this.jsonString);
   }
 
   removeChilds(): void {

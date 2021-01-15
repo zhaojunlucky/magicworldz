@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import * as moment from 'moment';
 import { DurationInputArg2, Moment } from 'moment';
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 
 interface DateCalType {
@@ -16,6 +17,9 @@ interface DateCalType {
   styleUrls: ['./date-calc.component.scss']
 })
 export class DateCalcComponent implements OnInit {
+  STORAGE_KEY: string = 'DATE_CALC';
+  DATE_SAVE_FORMAT: string = 'MM/DD/YYYY';
+
   range = new FormGroup({
     start: new FormControl(new Date()),
     end: new FormControl(),
@@ -37,9 +41,53 @@ export class DateCalcComponent implements OnInit {
   dateDiff: string = '';
   dateCalc: string = '';
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    let history = this.storageService.getJSON(this.STORAGE_KEY, null);
+    if (history) {
+      this.initRange(history.range);
+      this.initCalDateForm(history.calDateForm);
+    }
+  }
+
+  initRange(rangeHistory: any): void {
+    if (rangeHistory) {
+      if (rangeHistory.start) {
+        this.range.controls.start.setValue(moment(rangeHistory.start, this.DATE_SAVE_FORMAT));
+      }
+
+      if (rangeHistory.end) {
+        this.range.controls.end.setValue(moment(rangeHistory.end, this.DATE_SAVE_FORMAT));
+      }
+    }
+    this.calcDateDiff(null);
+  }
+
+  initCalDateForm(calDateFormHistory: any): void {
+    if (calDateFormHistory) {
+      if (calDateFormHistory.calcDate) {
+        this.calDateForm.controls.calcDate.setValue(new Date(calDateFormHistory.calcDate));
+      }
+      this.direction = calDateFormHistory.direction;
+      this.inputCalcNum = calDateFormHistory.inputCalcNum;
+      this.selectedCalcType = calDateFormHistory.selectedCalcType;
+    }
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, {
+      range: {
+        start: this.range.value.start?.format(this.DATE_SAVE_FORMAT),
+        end: this.range.value.end?.format(this.DATE_SAVE_FORMAT),
+      },
+      calDateForm: {
+        calcDate: this.calDateForm.value.calcDate?.toString(),
+        direction: this.direction,
+        inputCalcNum: this.inputCalcNum,
+        selectedCalcType: this.selectedCalcType,
+      }
+    });
   }
 
   calcDateDiff(event: any): void {
@@ -50,6 +98,9 @@ export class DateCalcComponent implements OnInit {
       let weekDiff = this.calcWeekDiff(start, end);
       let monthDiff = this.calcMonthDiff(start, end);
       this.dateDiff = `${dayDiff}${weekDiff? ' = ' + weekDiff: ''}${monthDiff? ' = ' + monthDiff: ''}`;
+    }
+    if (event) {
+      this.save();
     }
   }
 
@@ -95,6 +146,7 @@ export class DateCalcComponent implements OnInit {
       let value = parseInt(this.inputCalcNum);
       date.add(directionNum * value, this.selectedCalcType as DurationInputArg2);
       this.dateCalc = date.format("M/D/YYYY dddd");
+      this.save();
     }
   }
 }
