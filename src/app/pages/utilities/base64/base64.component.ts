@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { StorageService } from '../../../shared/common-service/storage.service';
 
 @Component({
   selector: 'base64',
@@ -6,6 +7,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./base64.component.scss']
 })
 export class Base64Component implements OnInit {
+  STORAGE_KEY: string = 'BASE64';
   @ViewChild('srcInput', { static: true }) srcInput: ElementRef;
   @Input() srcText: string = '';
   resultText: string;
@@ -22,9 +24,10 @@ export class Base64Component implements OnInit {
 
   selectedEnc: BufferEncoding = this.encodings[0].value;
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    this.srcText = this.storageService.getOrDefault(this.STORAGE_KEY);
   }
 
   validate(): boolean {
@@ -33,7 +36,12 @@ export class Base64Component implements OnInit {
       this.srcInput.nativeElement.focus();
       return false;
     }
+    this.save();
     return true;
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, this.srcText);
   }
 
   encode(): void {

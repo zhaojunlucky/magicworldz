@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 @Component({
   selector: 'url-en-de',
@@ -6,13 +7,15 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./url-en-de.component.scss']
 })
 export class UrlEnDeComponent implements OnInit {
+  STORAGE_KEY: string = 'URL_EN_DE';
   @ViewChild('srcInput', { static: true }) srcInput: ElementRef;
   @Input() srcText: string = '';
   resultText: string;
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    this.srcText = this.storageService.getOrDefault(this.STORAGE_KEY);
   }
 
   validate(): boolean {
@@ -21,7 +24,12 @@ export class UrlEnDeComponent implements OnInit {
       this.srcInput.nativeElement.focus();
       return false;
     }
+    this.save();
     return true;
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, this.srcText);
   }
 
   encode(): void {

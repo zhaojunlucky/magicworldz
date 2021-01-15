@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { start } from 'repl';
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 @Component({
   selector: 'date-in-a-few-days',
@@ -7,6 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./date-in-a-few-days.component.scss']
 })
 export class DateInAFewDaysComponent implements OnInit {
+  STORAGE_KEY: string = 'DATE_IN_FEW_DAYS';
   daysControl = new FormControl('', [Validators.required]);
   startDateControl = new FormControl('', [Validators.required]);
   displayedColumns: string[] = ['days', 'date'];
@@ -21,10 +24,18 @@ export class DateInAFewDaysComponent implements OnInit {
     {"value": 180, name: "180"}
   ];
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.daysControl.setValue(this.daysList);
+    let startDate = this.storageService.getOrDefault(this.STORAGE_KEY);
+    if (startDate) {
+      this.startDateControl.setValue(startDate);
+    }
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, this.startDateControl.value);
   }
 
   calc(): void {
@@ -35,7 +46,7 @@ export class DateInAFewDaysComponent implements OnInit {
       let date = this.startDateControl.value;
       this.startDate = this.formatDate(new Date(date));
       this.results = this.calcDate(this.startDateControl.value, this.daysControl.value);
-
+      this.save();
     }
   }
 

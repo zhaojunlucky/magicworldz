@@ -5,6 +5,7 @@ import * as SHA1 from 'crypto-js/sha1'
 import * as SHA256 from 'crypto-js/sha256'
 import * as SHA512 from 'crypto-js/sha512'
 import * as SHA3 from 'crypto-js/sha3'
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 @Component({
   selector: 'sha',
@@ -12,6 +13,7 @@ import * as SHA3 from 'crypto-js/sha3'
   styleUrls: ['./sha.component.scss']
 })
 export class ShaComponent implements OnInit {
+  STORAGE_KEY: string = 'SHA';
   srcText: string = '';
   sha3Str: string = '';
   sha1Str: string = '';
@@ -19,9 +21,11 @@ export class ShaComponent implements OnInit {
   sha512Str: string = '';
   md5Str: string = '';
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    this.srcText = this.storageService.getOrDefault(this.STORAGE_KEY);
+    this.doSha(this.srcText);
   }
 
   doSha(newVal: string): void {
@@ -31,8 +35,13 @@ export class ShaComponent implements OnInit {
       this.sha512Str = SHA512(newVal).toString();
       this.sha3Str = SHA3(newVal).toString();
       this.md5Str = MD5(newVal).toString();
+      this.save();
     } else {
       this.sha1Str = this.sha256Str = this.sha512Str = this.sha3Str = this.md5Str = '';
     }
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, this.srcText);
   }
 }

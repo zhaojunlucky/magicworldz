@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InfoDialogComponent } from 'src/app/shared/info-dialog/info-dialog.component';
 import { Papa } from 'ngx-papaparse';
+import { StorageService } from 'src/app/shared/common-service/storage.service';
 
 const BREAKPOINT_WIDTH: number = 480;
 
@@ -11,6 +12,7 @@ const BREAKPOINT_WIDTH: number = 480;
   styleUrls: ['./csv-markdown.component.scss']
 })
 export class CsvMarkdownComponent implements OnInit {
+  STORAGE_KEY: string = 'CSV_MARKDOWN';
   files: any[] = [];
   csvTxt: string = "";
   markdownTableStr: string = "";
@@ -21,14 +23,34 @@ export class CsvMarkdownComponent implements OnInit {
   hasHeaders: boolean = false;
   breakpoint: number;
 
-  constructor(private dialog: MatDialog, private papa: Papa) { }
+  constructor(private dialog: MatDialog, private papa: Papa, private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.breakpoint = (window.innerWidth <= BREAKPOINT_WIDTH) ? 1 : 5;
+    let history = this.storageService.getJSON(this.STORAGE_KEY, null);
+    if (history) {
+      this.csvTxt = history.csvTxt;
+      this.separator = history.separator;
+      this.quote = history.quote;
+      this.newLine = history.newLine;
+      this.escape = history.escape;
+      this.hasHeaders = history.hasHeaders;
+    }
   }
 
   onResize(event: any) {
     this.breakpoint = (event.target.innerWidth <= BREAKPOINT_WIDTH) ? 1 : 5;
+  }
+
+  save(): void {
+    this.storageService.save(this.STORAGE_KEY, {
+      csvTxt: this.csvTxt,
+      separator: this.separator,
+      quote: this.quote,
+      newLine: this.newLine,
+      escape: this.escape,
+      hasHeaders: this.hasHeaders,
+    });
   }
 
   generateMdTable(): void {
@@ -50,7 +72,7 @@ export class CsvMarkdownComponent implements OnInit {
       }
 
       this.makeMdTable(result.data, this.hasHeaders);
-
+      this.save();
   }
 
   santiMd(str: string): string {
