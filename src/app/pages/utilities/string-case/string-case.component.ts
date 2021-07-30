@@ -17,7 +17,7 @@ export class StringCaseComponent implements OnInit {
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
-    let history = this.storageService.getJSON(this.STORAGE_KEY);
+    let history = this.storageService.getJSON(this.STORAGE_KEY, null);
     if (history) {
       this.srcText = history.srcText;
       this.splitText = history.splitText;
