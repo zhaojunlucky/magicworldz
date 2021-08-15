@@ -44,7 +44,8 @@
               },
               "src/robots.txt",
               "src/sitemap.xml",
-              "src/404.html"
+              "src/404.html",
+              "src/CNAME"
             ],
             "styles": [
               {
@@ -166,7 +167,8 @@
                 "input": "src",
                 "output": "/"
               },
-              "src/404.html"
+              "src/404.html",
+              "src/CNAME"
             ]
           }
         },
