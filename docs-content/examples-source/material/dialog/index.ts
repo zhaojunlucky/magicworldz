@@ -22,7 +22,6 @@ import {
   DialogFromMenuExample,
   DialogFromMenuExampleDialog
 } from './dialog-from-menu/dialog-from-menu-example';
-import {DialogHarnessExample} from './dialog-harness/dialog-harness-example';
 
 export {
   DialogContentExample,
@@ -33,7 +32,6 @@ export {
   DialogElementsExampleDialog,
   DialogFromMenuExample,
   DialogFromMenuExampleDialog,
-  DialogHarnessExample,
   DialogOverviewExample,
   DialogOverviewExampleDialog,
 };
@@ -47,7 +45,6 @@ const EXAMPLES = [
   DialogElementsExampleDialog,
   DialogFromMenuExample,
   DialogFromMenuExampleDialog,
-  DialogHarnessExample,
   DialogOverviewExample,
   DialogOverviewExampleDialog,
 ];
